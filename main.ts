@@ -258,6 +258,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.pipe, function (sprite, otherSpr
             tiles.setCurrentTilemap(tilemap`level4`)
             scene.setBackgroundColor(15)
             tiles.placeOnTile(mySprite, tiles.getTileLocation(0, 12))
+            sprites.destroy(BlockSet2)
             sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
             sprites.destroyAllSpritesOfKind(SpriteKind.plant)
             sprites.destroyAllSpritesOfKind(SpriteKind.Goomba)
@@ -470,6 +471,7 @@ let MushroomEvent: Sprite = null
 let iceProjectile: Sprite = null
 let fireProjectile: Sprite = null
 let direction = false
+let BlockSet2: Sprite = null
 let BlocksList: Image[] = []
 let PowerUpsList: Image[] = []
 let PiranhaPlantList: Image[] = []
@@ -2368,7 +2370,7 @@ BlocksList = [img`
     `]
 let BlockSet1 = sprites.create(BlocksList[0], SpriteKind.Block1)
 tiles.placeOnTile(BlockSet1, tiles.getTileLocation(63, 5))
-let BlockSet2 = sprites.create(BlocksList[0], SpriteKind.Block2)
+BlockSet2 = sprites.create(BlocksList[0], SpriteKind.Block2)
 tiles.placeOnTile(BlockSet2, tiles.getTileLocation(7, 7))
 GoombaAnimation(1, 13)
 piranhaPlant(29, 9)
