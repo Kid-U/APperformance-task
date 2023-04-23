@@ -183,7 +183,7 @@ function destoryedObstacles (Position1: number, Position2: number) {
     tiles.placeOnTile(MushroomEvent, tiles.getTileLocation(Position1, Position2))
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Goomba, function (sprite, otherSprite) {
-    if (mySprite.y < otherSprite.top) {
+    if (sprite.y < otherSprite.top) {
         sprite.vy = -50
         sprites.destroy(otherSprite, effects.ashes, 250)
         info.changeScoreBy(1)
