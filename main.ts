@@ -41,7 +41,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Block1, function (sprite, otherS
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Block2, function (sprite, otherSprite) {
     if (sprite.y > otherSprite.bottom) {
-        info.changeScoreBy(1)
         sprites.destroy(otherSprite)
         sprite.vy = 50
         PowerUps(PowerUpsList, 1, 7, 5)
