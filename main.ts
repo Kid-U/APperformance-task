@@ -198,7 +198,7 @@ function GoombaAnimation (num: number, num2: number) {
     goomba1Start = sprites.create(goombaList[0], SpriteKind.Goomba)
     tiles.placeOnTile(goomba1Start, tiles.getTileLocation(num, num2))
     Goombanimation = animation.createAnimation(ActionKind.GoombaWalk, 200)
-    for (let index = 0; index <= 4; index++) {
+    for (let index = 0; index <= goombaList.length - 1; index++) {
         Goombanimation.addAnimationFrame(goombaList[index])
     }
     animation.attachAnimation(goomba1Start, Goombanimation)
@@ -2099,98 +2099,6 @@ img`
     . . . f f d d d d f f f f f . . 
     . f f f f d d d d f f f f f . . 
     . f f f f f . d d f f f f f f . 
-    . f f f f f . . . . f f f f f . 
-    . . . . . . . . . . . . . . . . 
-    `
-]
-let goombaListRight = [
-img`
-    . . . . . . e e e e . . . . . . 
-    . . . . . e e e e e e . . . . . 
-    . . . . e e e e e e e e . . . . 
-    . . . e e e e e e e e e e . . . 
-    . . e f f e e e e e e f f e . . 
-    . e e e 1 f e e e e f 1 e e e . 
-    . e e e 1 f f f f f f 1 e e e . 
-    e e e e 1 f 1 e e 1 f 1 e e e e 
-    e e e e 1 1 1 e e 1 1 1 e e e e 
-    e e e e e e e e e e e e e e e e 
-    . e e e e d d d d d d e e e e . 
-    . . . . d d d d d d d d . . . . 
-    . . f f d d d d d d d d f f . . 
-    . f f f f f d d d d f f f f f . 
-    . f f f f f f . . f f f f f f . 
-    . . f f f f f . . f f f f f . . 
-    `,
-img`
-    . . . . . . e e e e . . . . . . 
-    . . . . . e e e e e e . . . . . 
-    . . . . e e e e e e e e . . . . 
-    . . . e e e e e e e e e e . . . 
-    . . e f f e e e e e e f f e . . 
-    . e e e 1 f e e e e f 1 e e e . 
-    . e e e 1 f f f f f f 1 e e e . 
-    e e e e 1 f 1 e e 1 f 1 e e e e 
-    e e e e 1 1 1 e e 1 1 1 e e e e 
-    e e e e e e e e e e e e e e e e 
-    . e f f f d d d d d d e e e e . 
-    . f f f f f f d d d d f f f f . 
-    . f f f f f f d d d d f f f f . 
-    . f f f f f f d d f f f f f f . 
-    . f f f f f . . . . f f f f f . 
-    . . . . . . . . . . . . . . . . 
-    `,
-img`
-    . . . . . . e e e e . . . . . . 
-    . . . . . e e e e e e . . . . . 
-    . . . . e e e e e e e e . . . . 
-    . . . e e e e e e e e e e . . . 
-    . . e f f e e e e e e f f e . . 
-    . e e e 1 f e e e e f 1 e e e . 
-    . e e e 1 f f f f f f 1 e e e . 
-    e e e e 1 f 1 e e 1 f 1 e e e e 
-    e e e e 1 1 1 e e 1 1 1 e e e e 
-    e f f f f f f e e e e e e e e e 
-    . f f f f f f d d d d e e e e . 
-    . f f f f f f d d d d f f f f . 
-    . f f f f f f d d d d f f f f . 
-    . f f f f f f d d f f f f f f . 
-    . f f f f f . . . f f f f f f . 
-    . . . . . . . . . . . . . . . . 
-    `,
-img`
-    . . . . . . e e e e . . . . . . 
-    . . . . . e e e e e e . . . . . 
-    . . . . e e e e e e e e . . . . 
-    . . . e e e e e e e e e e . . . 
-    . . e f f e e e e e e f f e . . 
-    . e e e 1 f e e e e f 1 e e e . 
-    . e e e 1 f f f f f f 1 e e e . 
-    e e e e 1 f 1 e e 1 f 1 e e e e 
-    e e e e 1 1 1 e e 1 1 1 e e e e 
-    e e e e e e e e e e e e e e e e 
-    . f f f f f f d d d d e e e e . 
-    . f f f f f f d d d d f f . . . 
-    . f f f f f f d d d d f f f f . 
-    . f f f f f f d d . f f f f f . 
-    . f f f f f . . . . f f f f f . 
-    . . . . . . . . . . . . . . . . 
-    `,
-img`
-    . . . . . . e e e e . . . . . . 
-    . . . . . e e e e e e . . . . . 
-    . . . . e e e e e e e e . . . . 
-    . . . e e e e e e e e e e . . . 
-    . . e f f e e e e e e f f e . . 
-    . e e e 1 f e e e e f 1 e e e . 
-    . e e e 1 f f f f f f 1 e e e . 
-    e e e e 1 f 1 e e 1 f 1 e e e e 
-    e e e e 1 1 1 e e 1 1 1 e e e e 
-    e e e e e e e e e e e e e e e e 
-    e e e e e e e d d d d e e e e . 
-    . . f f f f f d d d d f f . . . 
-    . . f f f f f d d d d f f f f . 
-    . f f f f f f d d . f f f f f . 
     . f f f f f . . . . f f f f f . 
     . . . . . . . . . . . . . . . . 
     `
